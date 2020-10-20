@@ -1,0 +1,71 @@
+%--------------------------------------------------------------------------------------------------
+%	PREAMBOLO
+%---------------------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt,twoside,openright]{memoir}
+\usepackage[utf8x]{inputenc}
+%\usepackage{showframe}
+\usepackage{geometry} 
+%---------------------------------------------------------------------------------------------------
+%	Pacchetti ed impostazioni generali
+
+\input{struttura}
+
+%---------------------------------------------------------------------------------------------------
+%	DOCUMENTO
+%---------------------------------------------------------------------------------------------------
+
+
+
+\begin{document}
+%---------------------------------------------------------------------------------------------------
+%	Frontespizio
+%	Indice con numerazione romana delle pagine 
+
+\input{frontmatter/pagina_iniziale}
+\clearemptydoublepage
+
+\frontmatter 
+
+    \newpage
+    \listoffigures
+
+    \newpage
+    \listoftables
+
+	\newpage 
+    \addcontentsline{toc}{chapter}{Appendix}
+
+%**********************************************************************
+% DEFINIZIONE TITOLI ED INDENTATURE
+
+
+% inizio numerazione pagine in numeri arabi
+
+  	\mainmatter
+
+%---------------------------------------------------------------------------------------------------
+%	LISTA DEI CAPITOLI     
+% \input oppure \include
+ 	  \input{chapters/ch_intro}	
+ 	  \input{chapters/I-signal}	
+%---------------------------------------------------------------------------------------------------
+%	BIBLIOGRAFIA
+% bibliografia in formato bibtex
+%	\backmatter
+	\newpage\null\thispagestyle{empty}\newpage
+    \bibliographystyle{siam}
+	\nocite{*}    
+    \bibliography{biblio}
+% 	\addcontentsline{toc}{chapter}{Bibliografia}
+%   
+%---------------------------------------------------------------------------------------------------
+% %	APPENDICI    
+
+% % \input{Vuoto/Vuoto} 
+% \thispagestyle{empty}
+%   \addcontentsline{toc}{chapter}{Appendix}
+%   \appendix
+%   \input{appendix/appendix_a}
+%   \input{appendix/appendix_b}
+
+\end{document}

@@ -1,0 +1,40 @@
+\newpage
+\thispagestyle{myheadings}
+\chapter[Appendix A - EC8 Spectrum]{- \hspace{0.5cm} Appendix}
+\section*{\LARGE{EC8-Spectrum}}
+\vspace{0.5cm}
+\markboth{\MakeUppercase{Appendix A}}{\MakeUppercase{EC8-Spectrum}}
+\label{app:spectra}
+
+
+Script \ml~ to launch.
+\begin{itemize}
+    \item \verb|MAIN _ GLOBAL|
+    \item input source 
+            \begin{itemize}
+                \item loading seismic input by preparing a .m array file (groupaccREVmajor.m);
+                \item for each of the input file, the routine creates a folder inside which it collocates \verb|acc|, \verb|t|, \verb|dt|, \verb|name| and it is already converted in \verb|comma| files for SAP2000;
+                \item it is also prepared both time histories and spectra graphics representation and arias intensity cuttings;
+            \end{itemize}
+    \item \verb|main_for_SAP(no_gms)|
+            \begin{itemize}
+                \item \verb|list_SAP_input_files| to know how many simulations will be runned;
+                \item \verb|originalFile| prepare the .$2k$ file of SAP2000
+                Pay attention that I missed the lines:
+                TABLE:  TABLES AUTOMATICALLY SAVED AFTER ANALYSIS
+                            SaveFile=Yes   FileName=output - from - SAP.xml   NamedSet=OUT-STRUCT-ALL   Group=ALL
+                        END TABLE DATA
+                        I prepare this file by opening reference file in SAP by the procedure: Define Database Table Set Names , select all flags.
+                        \item \verb|label_set_to_change| what I should change inside the SAP file, so preparing it for the next regular expressions.
+                        Therefore, I have tableset called labelName that collects all the info I will need to change during the analysis.
+                        
+            \end{itemize}
+    
+\end{itemize}
+    
+    
+    
+    \lstset{language=Tex,numbers=none}
+       \begin{lstlisting}[frame=lines]
+
+       \end{lstlisting}
